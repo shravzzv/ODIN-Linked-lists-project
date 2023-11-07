@@ -178,4 +178,16 @@ describe('LinkedList class tests', () => {
     list.append(3)
     expect(list.findIndexOf(5)).toBeNull()
   })
+
+  it('should return a string null when converting an empty list to string', () => {
+    const list = new LinkedList()
+    expect(list.toString()).toBe('null')
+  })
+
+  it('should return the correct string when converting a list to a string', () => {
+    const list = new LinkedList()
+    list.append(1)
+    list.append(2)
+    expect(list.toString()).toBe('( 1 ) -> ( 2 ) -> null')
+  })
 })
