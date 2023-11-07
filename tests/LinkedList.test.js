@@ -223,37 +223,51 @@ describe('LinkedList class tests', () => {
     expect(list.at(4).value).toBe(5)
   })
 
-  it('should not remove at an index from an empty list', () => {
+  it('should do nothing when trying to remove an element from an empty list using removeAt()', () => {
     const list = new LinkedList()
-    list.removeAt(2)
-    expect(list.getSize()).toBe(0)
-
-    list.removeAt(-1)
-    expect(list.getSize()).toBe(0)
-
-    list.removeAt(1)
+    list.removeAt(0)
     expect(list.getSize()).toBe(0)
   })
 
-  it('should replace the head when index is passed as zero to removeAt()', () => {
+  it('should remove the only node in a list with one element using removeAt()', () => {
     const list = new LinkedList()
     list.append(1)
-    list.append(2)
     list.removeAt(0)
-    expect(list.at(0).value).toBe(2)
+    expect(list.getHead()).toBeNull()
   })
 
-  it('should remove nodes from the correct indices', () => {
+  it('should remove the first node in a list with multiple elements using removeAt()', () => {
     const list = new LinkedList()
     list.append(1)
     list.append(2)
     list.append(3)
-    list.append(4)
+    list.removeAt(0)
+    expect(list.at(0).value).toBe(2)
+    expect(list.getSize()).toBe(2)
+  })
 
-    list.removeAt(1)
-    expect(list.at(1).value).toBe(3)
+  it('should remove the last node in a list with multiple elements using removeAt()', () => {
+    const list = new LinkedList()
+    list.append(1)
+    list.append(2)
+    list.append(3)
+    list.removeAt(2)
+    expect(list.at(1).value).toBe(2)
+    expect(list.getSize()).toBe(2)
+  })
 
-    list.removeAt(1)
-    expect(list.at(1).value).toBe(4)
+  it('should insert and remove nodes at various positions in the list', () => {
+    const list = new LinkedList()
+    list.append(1) // [1]
+    list.insertAt(0, 0) // [0, 1]
+    list.prepend(-1) // [-1, 0, 1]
+    list.append(2) // [-1, 0, 1, 2]
+    list.insertAt(1, 2) // [-1, 0, 1, 1, 2]
+    list.removeAt(3) // [-1, 0, 1, 2]
+    expect(list.at(0).value).toBe(-1)
+    expect(list.at(1).value).toBe(0)
+    expect(list.at(2).value).toBe(1)
+    expect(list.at(3).value).toBe(2)
+    expect(list.getSize()).toBe(4)
   })
 })
