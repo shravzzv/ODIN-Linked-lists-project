@@ -134,4 +134,25 @@ describe('LinkedList class tests', () => {
     list.pop()
     expect(list.getTail().value).toBe(2)
   })
+
+  it('should return false when checking for a value in an empty list', () => {
+    const list = new LinkedList()
+    expect(list.contains(42)).toBe(false)
+  })
+
+  it('should return true when checking for a value present in the list', () => {
+    const list = new LinkedList()
+    list.append(1)
+    list.append(2)
+    list.append(3)
+    expect(list.contains(2)).toBe(true)
+  })
+
+  it('should return false when checking for a value not present in the list', () => {
+    const list = new LinkedList()
+    list.append(1)
+    list.append(2)
+    list.append(3)
+    expect(list.contains(42)).toBe(false)
+  })
 })

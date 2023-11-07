@@ -86,4 +86,15 @@ export class LinkedList {
       prevNode.nextNode = null
     }
   }
+
+  contains(value) {
+    // returns true if value is in list or returns false
+    let isPresent = false
+    let currentNode = this.head
+    while (currentNode) {
+      if (currentNode.value === value) isPresent = true
+      currentNode = currentNode.nextNode
+    }
+    return isPresent
+  }
 }
