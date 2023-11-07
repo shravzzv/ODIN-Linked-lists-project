@@ -222,4 +222,38 @@ describe('LinkedList class tests', () => {
     expect(list.at(3).value).toBe(4)
     expect(list.at(4).value).toBe(5)
   })
+
+  it('should not remove at an index from an empty list', () => {
+    const list = new LinkedList()
+    list.removeAt(2)
+    expect(list.getSize()).toBe(0)
+
+    list.removeAt(-1)
+    expect(list.getSize()).toBe(0)
+
+    list.removeAt(1)
+    expect(list.getSize()).toBe(0)
+  })
+
+  it('should replace the head when index is passed as zero to removeAt()', () => {
+    const list = new LinkedList()
+    list.append(1)
+    list.append(2)
+    list.removeAt(0)
+    expect(list.at(0).value).toBe(2)
+  })
+
+  it('should remove nodes from the correct indices', () => {
+    const list = new LinkedList()
+    list.append(1)
+    list.append(2)
+    list.append(3)
+    list.append(4)
+
+    list.removeAt(1)
+    expect(list.at(1).value).toBe(3)
+
+    list.removeAt(1)
+    expect(list.at(1).value).toBe(4)
+  })
 })
