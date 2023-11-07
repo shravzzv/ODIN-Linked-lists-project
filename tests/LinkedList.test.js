@@ -93,4 +93,23 @@ describe('LinkedList class tests', () => {
     list.append(3)
     expect(list.getTail().value).toBe(3)
   })
+
+  it('should return -1 when accessing a node at a negative index', () => {
+    const list = new LinkedList()
+    expect(list.at(-1)).toBe(-1)
+  })
+
+  it('should return -1 when accessing a node at an index larger than the list size', () => {
+    const list = new LinkedList()
+    list.append(1)
+    expect(list.at(1)).toBe(-1)
+  })
+
+  it('should return the correct node when accessing a valid index', () => {
+    const list = new LinkedList()
+    list.append(1)
+    list.append(2)
+    list.append(3)
+    expect(list.at(1).value).toBe(2)
+  })
 })
