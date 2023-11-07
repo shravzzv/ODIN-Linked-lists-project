@@ -18,4 +18,11 @@ export class LinkedList {
       currentNode.nextNode = node
     }
   }
+
+  prepend(value) {
+    // adds a new node to the start of the list
+    const node = new Node(value)
+    node.nextNode = this.head
+    this.head = node
+  }
 }
