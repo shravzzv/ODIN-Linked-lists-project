@@ -68,4 +68,29 @@ describe('LinkedList class tests', () => {
     list.append(3)
     expect(list.getSize()).toBe(3)
   })
+
+  it('should return null when getting head of an empty list', () => {
+    const list = new LinkedList()
+    expect(list.getHead()).toBeNull()
+  })
+
+  it('should return the head node when the list is not empty', () => {
+    const list = new LinkedList()
+    list.append(1)
+    list.append(2)
+    expect(list.getHead().value).toBe(1)
+  })
+
+  it('should return null when getting tail of an empty list', () => {
+    const list = new LinkedList()
+    expect(list.getTail()).toBeNull()
+  })
+
+  it('should return the last node when the list is not empty', () => {
+    const list = new LinkedList()
+    list.append(1)
+    list.append(2)
+    list.append(3)
+    expect(list.getTail().value).toBe(3)
+  })
 })

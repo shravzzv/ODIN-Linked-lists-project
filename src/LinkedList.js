@@ -39,4 +39,21 @@ export class LinkedList {
       return count
     }
   }
+
+  getHead() {
+    // returns the first node in the list
+    return this.head
+  }
+
+  getTail() {
+    // returns the last node in the list
+    if (this.head === null) return null
+    else {
+      let currentNode = this.head
+      while (currentNode.nextNode) {
+        currentNode = currentNode.nextNode
+      }
+      return currentNode
+    }
+  }
 }
