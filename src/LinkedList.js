@@ -124,4 +124,19 @@ export class LinkedList {
     string += 'null'
     return string
   }
+
+  insertAt(value, index) {
+    // inserts a new node with the provided value at the given index
+    if (index < 0 || index >= this.getSize()) return
+
+    if (index === 0) {
+      this.prepend(value)
+    } else {
+      const node = new Node(value)
+      let currentNode = this.at(index)
+      let prevNode = this.at(index - 1)
+      prevNode.nextNode = node
+      node.nextNode = currentNode
+    }
+  }
 }
