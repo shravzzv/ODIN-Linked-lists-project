@@ -84,6 +84,6 @@ Find a bug or want to request a new feature? Please let us know by submitting an
 
 ## License
 
-This project is licensed under the BSD License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
 
 ---
