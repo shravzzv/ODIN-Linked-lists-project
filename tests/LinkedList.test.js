@@ -55,4 +55,17 @@ describe('LinkedList class tests', () => {
     expect(currentNode.value).toBe(2)
     expect(currentNode.nextNode).toBeNull()
   })
+
+  it('should return zero as the size of an empty list', () => {
+    const list = new LinkedList()
+    expect(list.getSize()).toBe(0)
+  })
+
+  it('should return the correct size of an non empty list', () => {
+    const list = new LinkedList()
+    list.append(1)
+    list.append(2)
+    list.append(3)
+    expect(list.getSize()).toBe(3)
+  })
 })

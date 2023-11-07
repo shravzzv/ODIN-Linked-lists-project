@@ -25,4 +25,18 @@ export class LinkedList {
     node.nextNode = this.head
     this.head = node
   }
+
+  getSize() {
+    // returns the total number of nodes in the list
+    if (this.head === null) return 0
+    else {
+      let count = 1
+      let currentNode = this.head
+      while (currentNode.nextNode) {
+        count++
+        currentNode = currentNode.nextNode
+      }
+      return count
+    }
+  }
 }
