@@ -112,4 +112,26 @@ describe('LinkedList class tests', () => {
     list.append(3)
     expect(list.at(1).value).toBe(2)
   })
+
+  it('should do nothing when trying to remove an element from an empty list', () => {
+    const list = new LinkedList()
+    list.pop()
+    expect(list.getHead()).toBeNull()
+  })
+
+  it('should remove the last element from a list with one element', () => {
+    const list = new LinkedList()
+    list.append(1)
+    list.pop()
+    expect(list.getHead()).toBeNull()
+  })
+
+  it('should remove the last element from a list with multiple elements', () => {
+    const list = new LinkedList()
+    list.append(1)
+    list.append(2)
+    list.append(3)
+    list.pop()
+    expect(list.getTail().value).toBe(2)
+  })
 })
