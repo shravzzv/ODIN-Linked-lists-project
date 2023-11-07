@@ -12,6 +12,8 @@
   "author": "Sai Shravan <shravzzv@outlook.com>",
   "license": "MIT",
   "devDependencies": {
+    "@babel/preset-env": "^7.23.2",
+    "babel-jest": "^29.7.0",
     "jest": "^29.7.0",
     "nodemon": "^3.0.1",
     "webpack": "^5.89.0",
