@@ -97,4 +97,19 @@ export class LinkedList {
     }
     return isPresent
   }
+
+  findIndexOf(value) {
+    // returns index of the node containing value, or null if not found
+    if (this.head === null) return null
+
+    let index = 0
+    let currentNode = this.head
+    while (currentNode) {
+      if (currentNode.value !== value) {
+        index++
+        currentNode = currentNode.nextNode
+      } else if (currentNode.value === value) return index
+    }
+    return null
+  }
 }

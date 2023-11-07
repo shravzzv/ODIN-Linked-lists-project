@@ -155,4 +155,27 @@ describe('LinkedList class tests', () => {
     list.append(3)
     expect(list.contains(42)).toBe(false)
   })
+
+  it('should return null when checking for the index of a value in an empty list', () => {
+    const list = new LinkedList()
+    expect(list.findIndexOf(42)).toBeNull()
+  })
+
+  it('should return the correct index when checking for the index of a value present in the list', () => {
+    const list = new LinkedList()
+    list.append(1)
+    list.append(2)
+    list.append(3)
+    expect(list.findIndexOf(1)).toBe(0)
+    expect(list.findIndexOf(2)).toBe(1)
+    expect(list.findIndexOf(3)).toBe(2)
+  })
+
+  it('should return null when checking for the index of a value not present in the list', () => {
+    const list = new LinkedList()
+    list.append(1)
+    list.append(2)
+    list.append(3)
+    expect(list.findIndexOf(5)).toBeNull()
+  })
 })
