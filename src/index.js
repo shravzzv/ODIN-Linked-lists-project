@@ -1,9 +1,8 @@
 import { LinkedList } from './LinkedList'
 
 const myList = new LinkedList()
-myList.append('sai shravan 1')
-myList.append('sai shravan 2')
-myList.append('sai shravan 3')
+myList.append(1)
+myList.append(2)
+myList.append(3)
 
-console.log(myList.getHead())
 console.log(myList.toString())
