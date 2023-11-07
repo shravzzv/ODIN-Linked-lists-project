@@ -36,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _LinkedList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LinkedList */ \"./src/LinkedList.js\");\n\r\n\r\nconst myList = new _LinkedList__WEBPACK_IMPORTED_MODULE_0__.LinkedList()\r\nmyList.append('sai shravan 1')\r\nmyList.append('sai shravan 2')\r\nmyList.append('sai shravan 3')\r\n\r\nconsole.log(myList.getHead())\r\nconsole.log(myList.toString())\r\n\n\n//# sourceURL=webpack://odin-linked-lists-project/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _LinkedList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LinkedList */ \"./src/LinkedList.js\");\n\r\n\r\nconst myList = new _LinkedList__WEBPACK_IMPORTED_MODULE_0__.LinkedList()\r\nmyList.append(1)\r\nmyList.append(2)\r\nmyList.append(3)\r\n\r\nconsole.log(myList.toString())\r\n\n\n//# sourceURL=webpack://odin-linked-lists-project/./src/index.js?");
 
 /***/ })
 
