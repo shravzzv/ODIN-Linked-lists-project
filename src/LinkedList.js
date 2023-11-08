@@ -58,7 +58,7 @@ export class LinkedList {
   }
 
   at(index) {
-    // returns the node at the give index
+    // returns the node at the given index
     if (index < 0 || index >= this.getSize()) return -1
 
     let currentNode = this.head
@@ -88,11 +88,14 @@ export class LinkedList {
   }
 
   contains(value) {
-    // returns true if value is in list or returns false
+    // returns true if value is in the list or returns false
     let isPresent = false
     let currentNode = this.head
     while (currentNode) {
-      if (currentNode.value === value) isPresent = true
+      if (currentNode.value === value) {
+        isPresent = true
+        break
+      }
       currentNode = currentNode.nextNode
     }
     return isPresent
